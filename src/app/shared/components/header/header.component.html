@@ -1,0 +1,51 @@
+<div class="container-header">
+  <div class="logo-horizonte">
+    <a href="https://horizontesas.com/"
+      ><img [src]="imgHorizonteLogo" alt=""
+    /></a>
+  </div>
+
+  <div class="sesion">
+    <H2 *ngIf="!logIn" (click)="modalsesion.showModal()">{{sesionText}}</H2>
+    <h2 *ngIf="logIn" (click)="logout()" >{{sesionText}}</h2>
+    <app-main-modal  [title]="'Iniciar Sesión'" #modalsesion>
+      <div class="container-sesion">
+        <form [formGroup]="formLogin">
+          <img
+            class="mb-4"
+            [src]="imgHorizonteLogo"
+            alt=""
+            width="72"
+            height="57"
+          />
+          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="user"
+              formControlName="user"
+              placeholder="Username"
+            />
+            <label for="user">User name</label>
+          </div>
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <label for="password">Password</label>
+          </div>
+          <button (click)="modalsesion.hideModal()" (click)="login(formLogin.value)" class="w-100 btn btn-lg btn-primary" type="submit">
+            Entrar
+          </button>
+          <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+        </form>
+      </div>
+    </app-main-modal>
+  </div>
+</div>

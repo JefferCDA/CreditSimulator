@@ -1,0 +1,48 @@
+.btn-calcular {
+  background-color: #eb5032;
+  color: white;
+}
+.btn-calcular:hover {
+  background-color: #87870b;
+  color: white;
+}
+.container-logos {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: 20vh;
+  width: 100%;
+}
+
+.container {
+  width: 30%;
+  padding: 15px;
+  box-shadow: 5px 5px 10px;
+  border-radius: 8px;
+  h1 {
+    color: #3e0005;
+  }
+  label {
+    color: #87870b;
+    font-size: larger;
+  }
+}
+.simulation-results {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 350px;
+  align-items: center;
+}
+
+.dataResultTitle {
+  h5 {
+    color: #eb5032;
+  }
+}
+.resultData {
+  h5 {
+    color: black;
+    font-weight:400 ;
+  }
+}

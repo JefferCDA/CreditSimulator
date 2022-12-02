@@ -1,0 +1,16 @@
+<ng-container *ngIf="show">
+  <div class="modalc" #modalBack>
+    <div class="modalc-content">
+      <div class="modalc-header">
+        <h4 class="modalc-title">
+          {{title}}
+        </h4>
+        <button class="bClose" (click)="hideModal()">X</button>
+      </div>
+      <div class="modalc-container">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</ng-container>
+

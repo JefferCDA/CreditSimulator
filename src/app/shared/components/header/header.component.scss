@@ -1,0 +1,46 @@
+.logo-horizonte {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img{
+    width: 200px;
+    margin: 16px;
+  }
+}
+.container-header {
+  display: flex;
+  justify-content: space-between;
+}
+.sesion {
+  color: #eb5032;
+  margin-right: 6%;
+  margin-top: 2%;
+  cursor: pointer;
+  h2:hover {
+    color: #87870b;
+  }
+  button {
+    background-color: #eb5032;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+  }
+  button:hover {
+    background-color: #87870b;
+    color: white;
+  }
+  input {
+    border-radius: 5px;
+    border-color: #87870b;
+    color: #87870b;
+  }
+}
+.container-sesion {
+  display: flex;
+  flex-direction: column;
+  img{
+    width: 150px;
+  }
+}

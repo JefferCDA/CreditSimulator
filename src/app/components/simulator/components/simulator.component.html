@@ -1,0 +1,59 @@
+
+<div class="container">
+  <h1>Información de crédito</h1>
+  <form [formGroup]="checkoutForm" (ngSubmit)="calculo(checkoutForm.value)">
+    <div class="mb-4">
+      <label for="payment" class="form-label">Ingresa Couta Fija</label>
+      <input
+        class="form-control"
+        id="payment"
+        formControlName="payment"
+        type="number"
+        placeholder="$150.000"
+        max="1250000"
+      />
+      <div class="invalid-feeback">This field is required</div>
+    </div>
+    <div class="mb-4">
+      <label for="paymentFrequency" class="form-label"
+        >Cantidad de coutas</label
+      >
+      <input
+        class="form-control"
+        id="paymentFrequency"
+        formControlName="paymentFrequency"
+        type="number"
+        placeholder="12"
+        max="96"
+      />
+      <div class="invalid-feeback">This field is required</div>
+    </div>
+    <div class="d-grid gap-2 col-4">
+      <button
+        type="submit"
+        (click)="modal.showModal()"
+        class="btn btn-calcular btn-lg"
+      >
+        Calcular
+      </button>
+      <app-main-modal [title]="'Informe simulación de crédito'" #modal>
+        <div class="simulation-results">
+          <div class="dataResultTitle">
+            <h5>{{ txtDisburse }}</h5>
+            <h5>{{ txtDelivery }}</h5>
+            <h5>{{ txtInsurance }}</h5>
+            <h5>{{ txtAval }}</h5>
+            <h5>{{ txtInvestment }}</h5>
+          </div>
+          <div class="resultData">
+            <h5>{{ disburse | currency }}</h5>
+            <h5>{{ delivery | currency }}</h5>
+            <h5>{{ insurance | currency }}</h5>
+            <h5>{{ aval | currency }}</h5>
+            <h5>{{ investment | currency }}</h5>
+          </div>
+        </div>
+      </app-main-modal>
+    </div>
+  </form>
+</div>
